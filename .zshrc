@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -45,6 +52,10 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
+# Other opts
+setopt auto_cd
+
+
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
@@ -52,11 +63,9 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-# Aliases
-alias ls='ls --color'
-alias ll='exa -lah'
-alias pacman='sudo pacman'
-alias x='startx'
+# Shell integrations
+eval "$(fzf --zsh)"
+## eval "$(zoxide init --cmd cd zsh)"
 
 # Git Alias
 alias cm='git commit -m'
@@ -72,6 +81,12 @@ acmp() {
 alias gs='git status'
 alias gp='git push'
 
-# Shell integrations
-eval "$(fzf --zsh)"
-## eval "$(zoxide init --cmd cd zsh)"
+# Aliases
+alias ls='ls --color'
+alias ll='exa -lah'
+alias pacman='sudo pacman'
+alias x='startx'
+alias v='nvim'
+alias open='xdg-open'
+alias fk='sudo !!'
+alias du='dysk'
