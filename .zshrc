@@ -104,4 +104,12 @@ alias ll='exa -lah'
 alias rdwm='cd ~/dwm; sudo make uninstall clean install && startx'
 alias cm='git commit -m'
 alias acm='git add . && git commit -m'
+acmp() {
+  if [ -z "$1" ]; then
+    echo "Error: Commit message is required."
+    return 1  # Exit with a non-zero status indicating failure
+  fi
+
+  git add . && git commit -m "$1" && git push
+}
 alias x='startx'
