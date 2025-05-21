@@ -3,11 +3,3 @@
 Currently has configuration for:
 - zsh
 - nvim
-## Installation
-1. Clone repo into ~
-2. Enter repo
-3. Install gnu stow
-4. Backup existing configuration
-5. Execute stow . in repository
-## Todo
-- zsh currently uses unmaintained zsh4humans which is incomplete and fetches unverified remote script (see .zshenv) which is potentially unsafe
