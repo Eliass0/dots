@@ -56,6 +56,9 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 alias ls='ls --color'
 alias ll='exa -lah'
 alias pacman='sudo pacman'
+alias x='startx'
+
+# Git Alias
 alias cm='git commit -m'
 alias acm='git add . && cm'
 acmp() {
@@ -66,8 +69,8 @@ acmp() {
 
   git add . && git commit -m "$1" && git push
 }
-alias x='startx'
 alias gs='git status'
+alias gp='git push'
 
 # Shell integrations
 eval "$(fzf --zsh)"
