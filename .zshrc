@@ -83,8 +83,8 @@ alias gp='git push'
 
 # Aliases
 alias ls='ls --color'
-alias ll='exa -lah'
-alias ls='exa -lh'
+alias ll='eza -lah'
+alias ls='eza -lh'
 alias pacman='sudo pacman'
 alias x='startx'
 alias v='nvim'
